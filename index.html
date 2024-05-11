@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script>
+         tailwind.config = {
+          theme: {
+            extend: {
+              fontFamily: { 'Poppins': ['Fraunces', 'Barlow']},
+              colors: {
+                primary : "#83888F",
+                secondary: "#0E8784",
+                gray: "#333D4B",
+                bg: "#FAF8F6",
+                white: "#FEFCF7"
+              },
+            },
+          },
+        };
+    </script>
+    <style>
+        .walk-animation {
+        animation: walk 3s ease-in-out infinite;
+        }
+
+        @keyframes walk {
+        0% {
+            transform: translateX();
+        }
+        50% {
+            transform: translateX(100px);
+        }
+        100% {
+            transform: translateX();
+        }
+        }
+        @keyframes rotateAnimation {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="flex gap-5 justify-between px-20 py-3 w-full text-sm leading-5 text-white bg-violet-900  max-md:hidden  style="font-family: Poppins;" >
+        <div class="flex gap-2">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/88851559c5863efca762ca9d556dd9f8a0911d6d0fa236db0023773fd3f498b1?" class="shrink-0 w-3 aspect-[0.75]" />
+            <div class="flex-auto">Rezilla, 18 Grattan St, Brooklyn</div>
+        </div>
+        <div class="flex gap-5 justify-between text-right">
+            <div class="flex gap-3.5">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/99e1fca3d1bc453f187c73a49e4f10e6ddcf743ddb92efcdb8a7963926b15cad?" class="shrink-0 w-4 aspect-square"/>
+                <div class="flex-auto my-auto">+1 206-214-2298</div>
+            </div>
+            <div class="flex gap-3 my-auto whitespace-nowrap ">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8b0dfd6fd5c671ee418b34aaad0e70d95852b22c82a368e6d614b9c44fbced38?" class="shrink-0 self-start w-4 aspect-[1.45] mt-2"/>
+                <div class="flex-auto">support@rezilla.com</div>
+            </div>
+        </div>
+    </div>
+    <div class="flex gap-5 justify-between px-20 py-4 w-full text-base font-medium bg-white max-md:flex-wrap max-md:px-5 max-md:max-w-full "  style="font-family: Poppins;" >
+        <div class="flex gap-0 my-auto whitespace-nowrap text-zinc-800 max-md:flex-wrap  md:items-center md:flex max-md:mr ">
+            <div id="nav-links" class="hidden md:flex gap-4 items-center flex-col md:flex-row max-md:m-6">
+              <a href="" class="justify-center px-4 py-3.5 bg-blue-600 bg-opacity-30 rounded-[30px] hover:text-cyan-500 durations-500"> Home </a>
+              <a href="" class="justify-center px-4 py-3.5 rounded-md bg-blue-600 bg-opacity-0 hover:text-cyan-500 durations-500"> About </a>
+              <a href="" class="justify-center px-4 py-3.5 rounded-md bg-blue-600 bg-opacity-0 hover:text-cyan-500 durations-500"> Listings </a>
+              <a href="" class="justify-center px-4 py-3.5 rounded-md bg-blue-600 bg-opacity-0 hover:text-cyan-500 durations-500"> Services </a>
+              <a href="" class="justify-center px-4 py-3.5 rounded-md bg-blue-600 bg-opacity-0 hover:text-cyan-500 durations-500"> Blogs </a>
+            </div>
+        </div>
+        <div class="flex gap-2 text-xl font-semibold whitespace-nowrap text-stone-900 max-md:mr-[200px] ">
+            <img src="https://i.postimg.cc/T39WVDx8/Untitled-1.png" class="shrink-0  rounded-full aspect-square h-[50px] w-[50px]" />
+            <div class="my-auto text-Poppins">Rezilla</div>
+        </div>
+        <button id="hamburger-menu" class="justify-center px-4 py-3.5  bg-opacity-30 rounded-[30px] hover:text-cyan-500 durations-500 md:hidden">
+            <img src="https://i.postimg.cc/YCP8tkK4/icon-hamburger-menu.png" alt="Hamburger menu">
+        </button>
+    <div class="flex gap-5 justify-between">
+        <div class="flex gap-2.5 my-auto whitespace-nowrap text-zinc-800 hover:text-cyan-500 durations-500 max-md:hidden">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b0adc66c1a042528b21784b5b04407416ce3ad335c09ba517202abc701193c7b?" class="shrink-0 self-start aspect-square w-[18px]" />
+            <button class="flex-auto">Login / Register</button>
+        </div>
+        <div class="flex flex-col justify-center px-7 py-4 text-center text-white bg-violet-900 rounded-[50px] max-md:px-5  max-md:hidden">
+        <div class="flex gap-2.5 hover:text-cyan-500 durations-500">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/cbfc4cf4939b06381788559f7e8780f463e31fb747cc260754a4e1289e491de7?" class="shrink-0 w-5 aspect-square" />
+            <button>Add Listing</button>
+        </div>
+        </div>
+    </div>
+    </div>
+    <div class="flex z-10 flex-col self-center px-5 mt-6 -mb-11 ml-32 w-full max-w-[1440px]  h-[902px] max-md:mt-10 max-md:mb-2.5 max-md:max-w-full  max-md:ml-1" style=" border-radius: 0px 0px 800px 800px;
+    background: linear-gradient(180deg, rgba(76, 201, 240, 0.00) 0%, rgba(67, 97, 238, 0.30) 100%); ">
+    <div class="self-start text-xl font-medium text-blue-600 tracking-[2.91px] max-md:ml-8 "  style="font-family: Poppins;" >
+        REAL ESTATE
+    </div>
+    <div class="mt-5 max-md:max-w-full max-md:mr-11 ">
+        <div class="flex gap-5 max-md:flex-col max-md:gap-0 max-md:mr-11">
+        <div class="flex flex-col w-3/5 max-md:ml-0 max-md:w-full max-md:ml-12">
+            <div class="flex flex-col grow mt-1 max-md:mt-10 max-md:max-w-full">
+            <div class="flex flex-col px-7 max-md:px-5 max-md:max-w-full">
+                <div class="text-6xl font-semibold leading-[65px] text-neutral-950 max-md:max-w-full max-md:text-4xl max-md:leading-[51px]" > Find a perfect home you love..! </div>
+                <div class="mt-6 text-base leading-7 text-zinc-500 max-md:max-w-full" > Etiam eget elementum elit. Aenean dignissim dapibus vestibulum. <br/> Integer a dolor eu sapien sodales vulputate ac in purus. </div>
+            </div>
+            <img src="https://i.postimg.cc/SKZ252DB/luxury-classic-modern-bedroom-suite-hotel-1.png" class="mt-9 w-full aspect-[1.64] max-md:max-w-full relative slide" />
+            <img src="https://i.postimg.cc/g0FpR06Q/Rectangle-26.png" class="hidden mt-9 w-full aspect-[1.64] max-md:max-w-full relative slide" alt="">
+            <img src="https://i.postimg.cc/XJn0HDLg/Rectangle-28.png" class="hidden mt-9 w-full aspect-[1.64] max-md:max-w-full relative slide" alt="">
+            <img src="https://i.postimg.cc/PJxnhpBp/Rectangle-27.png" class="hidden mt-9 w-full aspect-[1.64] max-md:max-w-full relative slide" alt="">
+            </div>
+            <div class="absolute mt-[465px] ml-3 max-md:mt-[417px] max-md:ml-1 ">
+                <button id="prev">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7c4a78661a417788e09706ca8e4d411ca81068f1997f4ccbf5f9f0b8b81de518?" class="shrink-0 aspect-square w-[50px]" />
+                </button>
+            </div>
+            <div class="absolute mt-[470px] ml-[720px] max-md:mt-[420px] max-md:ml-[363px]">
+                <button id="next">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c6033dce0249dca724a3a71610e423668fb19b030d4e702ccb7e1cae0360ffdc?" class="shrink-0 aspect-square w-[50px] " />
+                </button>
+            </div>     
+        </div>
+        <div class="flex flex-col ml-5 w-2/5 max-md:ml-0 max-md:w-full animate max-md:ml-12">
+            <div class="flex flex-col grow pb-16 w-full text-base bg-white shadow-2xl rounded-[30px] max-md:mt-10" >
+            <div class="flex flex-col pt-10 pr-20 pl-10 font-medium text-center bg-white rounded-3xl border-b border-solid border-neutral-400 max-md:px-5" >
+                <div class="flex gap-5 justify-between self-center max-w-full w-[252px]" >
+                    <a href="" class="text-violet-900">For Sale</a>
+                    <a href="" class="text-zinc-500">For Rent</a>
+                </div>
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9d3b9cc71e9338f5a7f5dd921109386b15beffcdd694fb0e016cacaaee83d43a?" class="mt-7 max-w-full border-violet-900 border-solid aspect-[50] border-[3px] stroke-[3px] stroke-violet-900 w-[153px]"/>
+            </div>
+            <div class="flex flex-col px-10 mt-12 leading-[162.5%] max-md:px-5 max-md:mt-10" >
+                <div class="justify-center items-start px-5 py-6 rounded-3xl border-0 border-solid bg-neutral-300 bg-opacity-20 border-neutral-300 text-neutral-400"> New York, San Francisco, etc </div>
+                <div class="flex gap-5 p-6 mt-8 rounded-3xl bg-neutral-300 bg-opacity-20 text-zinc-500 text-opacity-50 max-md:pr-5" >
+                    <div class="flex-auto">Select Property Type</div>
+                    <button id="" class="justify-center px-4 py-3.5  bg-opacity-30 rounded-[30px] hover:text-cyan-500 durations-500 ">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/06baaeb140c7abbf649d12d1096dc155ef89b500e24cd188c150b63fe4897b69?" alt="">
+                    </button>
+                </div>
+                <div class="flex gap-5 px-6 py-6 mt-8 rounded-3xl bg-neutral-300 bg-opacity-20 text-zinc-500 text-opacity-50 max-md:pr-5" >
+                    <div class="flex-auto">Select Rooms</div>
+                    <button id="" class="justify-center px-4 py-3.5  bg-opacity-30 rounded-[30px] hover:text-cyan-500 durations-500 ">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/06baaeb140c7abbf649d12d1096dc155ef89b500e24cd188c150b63fe4897b69?" alt="">
+                    </button>
+                </div>
+                <div class="flex gap-3 self-start mt-5 text-sm leading-5 text-right text-violet-900" >
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7e4b8657b288c8b50a57e904e1b737f478dc442523c7ce10c3a793ba487e8592?" class="shrink-0 w-3.5 aspect-square" />
+                    <a href="" class="flex-auto">Advance Search</a>
+                </div>
+                <div class="flex justify-center items-center px-16 py-5 mt-16 w-full font-medium text-center text-white whitespace-nowrap bg-violet-900 border border-solid border-stone-300 rounded-[50px] max-md:px-5 max-md:mt-10">
+                <div class="flex gap-3">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3b08d3c1c79ce9002470e2603f1d016dd8a0312ac6a923dbf6f260a19b1b152c?" class="shrink-0 w-5 aspect-square" />
+                    <button class="my-auto">Search</button>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="self-center mt-16 max-w-full w-[710px] max-md:mt-10 ">
+        <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+        <div class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+            <div class="flex grow gap-2.5 px-12 py-7 w-full text-xl font-medium bg-white shadow-2xl rounded-[70px] text-zinc-800 max-md:px-5 max-md:mt-8">
+            <img srcset="https://i.postimg.cc/ydQGkPnL/Untitled-2.png" class="shrink-0 my-auto max-w-full  w-[100px] max-md:ml-28"/>
+            <div style="font-family: Poppins;">
+                72k+ Happy
+                <br />
+                Customers
+            </div>
+            </div>
+        </div>
+        <div class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full max-md: ">
+            <div
+            class="flex grow gap-2.5 px-10 py-5 w-full text-xl font-medium bg-white shadow-2xl rounded-[50px] text-zinc-800 max-md:px-5 max-md:mt-8">
+            <img srcset="https://i.postimg.cc/W1d0v7J2/Ellipse-3-1.png" class="shrink-0 rounded-full border-2 border-white border-solid aspect-square w-[40px] h-[40px] mt-4 max-md:ml-28"/>
+            <div class="my-auto max-md:ml-6 "  style="font-family: Poppins;">
+                200+ New
+                <br />
+                Listings Everyday!
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    <div class="ml-7 max-w-full w-[716px] mt-36 ">
+        <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+          <div class="flex flex-col w-[43%] max-md:ml-0 max-md:w-full">
+            <div
+              class="shrink-0 mx-auto rounded-full bg-[linear-gradient(180deg,#4361EE_0%,rgba(67,97,238,0.00)_100%)] h-[100px] w-[100px] max-md:mt-10 max-md:hidden"
+            ></div>
+          </div>
+          <div class="flex flex-col ml-5 w-[57%] max-md:ml-0 max-md:w-full">
+            <div
+              class="mt-20 text-base font-medium text-center text-zinc-500 max-md:mt-[650px] "
+            >
+              Trusted by 100+ Companies across the globe!
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="flex gap-5 justify-between items-center self-center ml-[200px] mt-11 w-full max-w-[1160px] max-md:gap-12 max-md:justify-center max-md:mt-10 max-md:max-w-full mt-32  max-md:" >
+        <img srcset="https://i.postimg.cc/Fs7xrvM5/image-1.png" class="shrink-0 self-stretch max-w-full mix-blend-luminosity aspect-[2.94] w-[120px] walk-animation"/>
+        <img srcset="https://i.postimg.cc/RVyLq8m3/image-2.png" class="shrink-0 self-stretch my-auto max-w-full mix-blend-luminosity aspect-[3.33] w-[120px] walk-animation max-md:mt-3"/>
+        <img srcset="https://i.postimg.cc/PqzW35wZ/image-3.png" class="shrink-0 self-stretch my-auto max-w-full mix-blend-luminosity aspect-[3.33] w-[120px] walk-animation"/>
+        <img srcset="https://i.postimg.cc/qRJ89HsF/image-4.png" class="shrink-0 self-stretch my-auto max-w-full mix-blend-luminosity aspect-[3.33] w-[120px] walk-animation max-md:mb-3"/>
+        <img srcset="https://i.postimg.cc/DZxqhp5w/image-5.png" class="shrink-0 self-start max-w-full mix-blend-luminosity aspect-[3.03] w-[120px] walk-animation"/>
+        <img srcset="https://i.postimg.cc/tJ7F4dmt/image-6.png" class="shrink-0 self-stretch my-auto max-w-full mix-blend-luminosity aspect-[2.94] w-[110px] walk-animation max-md:mb-3"/>
+    </div>
+    <div class="mt-56 text-xl font-medium text-blue-600 tracking-[2.91px] max-md:mt-10 ml-32 max-md:hidden"> WHO ARE WE </div>
+    <div class="self-center mt-9 w-full max-w-[1120px] max-md:max-w-full ml-[230px] max-md:ml-8">
+        <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+          <div class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+            <div class="flex flex-col grow max-md:mt-10 max-md:max-w-full">
+              <div class="text-4xl font-semibold leading-10 text-zinc-800 max-md:max-w-full"> Assisting individuals in <br> locating the appropriate real <br>estate. </div>
+              <div class="mt-7 text-base leading-7 text-zinc-500 max-md:max-w-full"> Donec porttitor euismod dignissim. Nullam a lacinia ipsum, nec dignissim purus. <br>Nulla convallis ipsum molestie nibh malesuada, ac malesuada leo volutpat.
+              </div> 
+              <div class="flex gap-5 py-7 pr-20 pl-10 mt-9 bg-white shadow-lg rounded-[30px] max-md:flex-wrap max-md:px-5 max-md:mr-12 " >
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d934bb1a8eec929d02fa339ecf3a7f64ae175722463ca112017f626d15d0adf8?" class="shrink-0 my-auto w-10 aspect-square" />
+                <div class="flex flex-col grow shrink-0 basis-0 w-fit">
+                  <div class="text-xl font-medium text-blue-600">
+                    Donec porttitor euismod
+                  </div>
+                  <div class="mt-3.5 text-base leading-7 text-zinc-500">
+                    Nullam a lacinia ipsum, nec dignissim purus. Nulla
+                  </div>
+                </div>
+              </div>
+              <div class="flex gap-5 py-7 pr-20 pl-10 mt-8 bg-white shadow-lg rounded-[30px] max-md:flex-wrap max-md:px-5 max-md:mr-12">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5daa0559c96b6ee5832254b10271a7246b33e040ad7d1c51e6e285eb3c78e46a?" class="shrink-0 my-auto w-10 aspect-[0.91]" />
+                <div class="flex flex-col grow shrink-0 basis-0 w-fit">
+                  <div class="text-xl font-medium text-blue-600">
+                    Donec porttitor euismod
+                  </div>
+                  <div class="mt-3.5 text-base leading-7 text-zinc-500">
+                    Nullam a lacinia ipsum, nec dignissim purus. Nulla
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+            <div class="grow max-md:mt-10 max-md:max-w-full">
+              <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+                <div class="flex flex-col  max-md:ml-0 max-md:w-full ">
+                    <img id="rotateImage" src="https://i.postimg.cc/zfWZp11M/Group.png" class="w-[200px] h-[200px] absolute ml-36 mt-[-100px] max-md:mt-[0px]" alt="" >
+                    <img srcset="https://i.postimg.cc/Z50Ys7vL/Rectangle-14.png" class="grow  w-[280px] h-[500px]  aspect-[0.56] max-md:mt-10"/>
+                </div>
+                <div class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:flex-row max-md:ml-[255px] max-md:mt-[-520px] ">
+                  <div class="flex flex-col max-md:mt-5">
+                    <img srcset="https://i.postimg.cc/YCJ7npHp/Rectangle-15.png" class="w-full  aspect-[0.99]" />
+                    <img srcset="https://i.postimg.cc/xC16Lz4q/Rectangle-16.png" class="mt-5 w-full  aspect-[1.27]" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="mt-52 text-xl font-medium text-blue-600 tracking-[2.91px] max-md:mt-10 pl-10" > CHECKOUT OUR NEW </div>
+    <div class="flex gap-5 self-center mt-12 ml-36  max-w-[1120px] max-md:flex-wrap max-md:max-w-full">
+        <div class="flex-auto text-4xl font-semibold leading-10 text-zinc-800 max-md:max-w-full max-md:ml-[-100px] "> Latest Listed Properties </div>
+        <div class="flex gap-5 self-start text-base font-medium text-center text-violet-900 whitespace-nowrap  ">
+            <button class="justify-center px-8 py-5 bg-white border border-violet-900 border-solid rounded-[30px] max-md:px-5"> All </button>
+            <button class="justify-center px-8 py-5 text-white bg-violet-900 rounded-[30px] max-md:px-5" > Sell </button>
+            <button class="justify-center px-8 py-5 bg-white border border-violet-900 border-solid rounded-[30px] max-md:px-5" > Rent </button>
+        </div>
+    </div>
+    <div class="mt-5 text-base leading-7 text-zinc-500 max-md:max-w-full ml-12 ">
+        Donec porttitor euismod dignissim. Nullam a lacinia ipsum, nec dignissim
+        purus.
+    </div>
+    <div class="flex gap-12 mt-12 max-md:flex-wrap max-md:mt-10 max-md:max-w-full ml-[170px] max-md:ml-1 max-md:block " style="font-family: Poppins; ">
+        <div class="flex flex-col flex-1 text-base font-medium text-zinc-800 max-md:mb-16 max-md:ml-32 ">
+            <div class="flex overflow-hidden relative flex-col items-start px-8 pt-20 pb-7 w-full text-red-600 whitespace-nowrap aspect-square max-md:px-5 max-md:w-[338px] max-md:h-[220px]  ">
+              <img srcset="https://i.postimg.cc/zvHnHphn/Rectangle-21.png" class="object-cover absolute  inset-0 size-full  " style="border-radius: 20px;"/>
+              <div class="flex relative gap-2.5 px-8 py-2.5 mt-40  bg-red-100  rounded-3xl  max-md:mt-[0px] max-md:mt-[70px] ">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d7ac8b26d19dd8c201eeafebddd1c9885f5d2d78639f0fdcd8b80ee79c90983a?" class="shrink-0 w-5 aspect-[0.87] " />
+                  <button>Popular</button>
+              </div>
+            </div>
+            <div class="mt-8 text-3xl font-semibold ">$ 5,970</div>
+            <div class="mt-5 text-xl  ">Tranquil Haven in the Woods</div>
+            <div class="mt-5 leading-[162.5%] text-zinc-500 ">
+              103 Wright CourtBurien, WA 98168
+            </div>
+            <div class="flex gap-5 mt-5 leading-[162.5%] ">
+              <div class="flex flex-1 gap-2.5 self-start">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6e8671817e78999ed9067d1735380a63eeda89a0654da5c7939baaa0ac80c408?" class="shrink-0 aspect-[1.43] w-[30px]"/>
+                <div class="flex-auto my-auto">4 Beds</div>
+              </div>
+              <div class="flex flex-1 gap-2.5">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c9e229e8224063f4163b09246e3a74249278d45bcf1e3a8d8b1f0cf338d19aec?" class="shrink-0 w-6 aspect-square" />
+                <div class="flex-auto my-auto">3 Bath</div>
+              </div>
+            </div>
+        </div>
+        <div class="flex flex-col flex-1 text-base font-medium text-zinc-800 max-md:mb-16 max-md:ml-32 ">
+            <div class="flex overflow-hidden relative flex-col items-start px-8 pt-20 pb-7 w-full text-blue-500 whitespace-nowrap aspect-square max-md:px-5 max-md:w-[338px] max-md:h-[220px]  ">
+              <img srcset="https://i.postimg.cc/zDwh6LjD/Rectangle-20-2.png" class="object-cover absolute  inset-0 size-full  " style="border-radius: 20px;"/>
+              <div class="flex relative gap-2.5 px-8 py-2.5 mt-40   rounded-3xl  max-md:mt-[0px] max-md:mt-[70px] " style="background: #D7EEFF;">
+                <img src="https://i.postimg.cc/VkvbJKc5/icon-home.png" class="shrink-0 w-5 aspect-[0.87] " />
+                  <button>New Listing</button>
+              </div>
+            </div>
+            <div class="mt-8 text-3xl font-semibold ">$ 1,970</div>
+            <div class="mt-5 text-xl  ">Serene Retreat by the Lake</div>
+            <div class="mt-5 leading-[162.5%] text-zinc-500 ">
+                1964 Jehovah Drive, VA 22408
+            </div>
+            <div class="flex gap-5 mt-5 leading-[162.5%] ">
+              <div class="flex flex-1 gap-2.5 self-start">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6e8671817e78999ed9067d1735380a63eeda89a0654da5c7939baaa0ac80c408?" class="shrink-0 aspect-[1.43] w-[30px]"/>
+                <div class="flex-auto my-auto">3 Beds</div>
+              </div>
+              <div class="flex flex-1 gap-2.5">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c9e229e8224063f4163b09246e3a74249278d45bcf1e3a8d8b1f0cf338d19aec?" class="shrink-0 w-6 aspect-square" />
+                <div class="flex-auto my-auto">2 Bath</div>
+              </div>
+            </div>
+        </div>
+        <div class="flex flex-col flex-1 text-base font-medium text-zinc-800 max-md:mb-16 max-md:ml-32 ">
+            <div class="flex overflow-hidden relative flex-col items-start px-8 pt-20 pb-7 w-full text-yellow-600 whitespace-nowrap aspect-square max-md:px-5 max-md:w-[338px] max-md:h-[220px]  ">
+              <img srcset="https://i.postimg.cc/DwpL6tcq/Rectangle-20-1.png" class="object-cover absolute  inset-0 size-full  " style="border-radius: 20px;"/>
+              <div class="flex relative gap-2.5 px-8 py-2.5 mt-40    rounded-3xl  max-md:mt-[0px] max-md:mt-[70px] " style="background: #F1FFF1;">
+                <img src="https://i.postimg.cc/k5V8pfjL/Vector-3.png" class="shrink-0 w-4 aspect-[0.87] " />
+                  <button>Discounted Price</button>
+              </div>
+            </div>
+            <div class="mt-8 text-3xl font-semibold ">$ 3,450</div>
+            <div class="mt-5 text-xl  ">Charming Cottage in the Meadow</div>
+            <div class="mt-5 leading-[162.5%] text-zinc-500 ">
+                1508 Centennial Farm RoadHarlan, 51537
+            </div>
+            <div class="flex gap-5 mt-5 leading-[162.5%] ">
+              <div class="flex flex-1 gap-2.5 self-start">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6e8671817e78999ed9067d1735380a63eeda89a0654da5c7939baaa0ac80c408?" class="shrink-0 aspect-[1.43] w-[30px]"/>
+                <div class="flex-auto my-auto">4 Beds</div>
+              </div>
+              <div class="flex flex-1 gap-2.5">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c9e229e8224063f4163b09246e3a74249278d45bcf1e3a8d8b1f0cf338d19aec?" class="shrink-0 w-6 aspect-square" />
+                <div class="flex-auto my-auto">4 Bath</div>
+              </div>
+            </div>
+        </div>
+        <div class="flex flex-col flex-1 text-base font-medium text-zinc-800 max-md:mb-16 max-md:ml-32 ">
+            <div class="flex overflow-hidden relative flex-col items-start px-8 pt-20 pb-7 w-full text-red-600 whitespace-nowrap aspect-square max-md:px-5 max-md:w-[338px] max-md:h-[220px]  ">
+              <img srcset="https://i.postimg.cc/zvHnHphn/Rectangle-21.png" class="object-cover absolute  inset-0 size-full  " style="border-radius: 20px;"/>
+            </div>
+            <div class="mt-8 text-3xl font-semibold ">$ 5,970</div>
+            <div class="mt-5 text-xl  ">Tranquil Haven in the Woods</div>
+            <div class="mt-5 leading-[162.5%] text-zinc-500 ">
+              103 Wright CourtBurien, WA 98168
+            </div>
+            <div class="flex gap-5 mt-5 leading-[162.5%] ">
+              <div class="flex flex-1 gap-2.5 self-start">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6e8671817e78999ed9067d1735380a63eeda89a0654da5c7939baaa0ac80c408?" class="shrink-0 aspect-[1.43] w-[30px]"/>
+                <div class="flex-auto my-auto">4 Beds</div>
+              </div>
+              <div class="flex flex-1 gap-2.5">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c9e229e8224063f4163b09246e3a74249278d45bcf1e3a8d8b1f0cf338d19aec?" class="shrink-0 w-6 aspect-square" />
+                <div class="flex-auto my-auto">3 Bath</div>
+              </div>
+            </div>
+        </div>
+        <div class="md:hidden">        
+            <button class=" max-md:ml-[170px] " style="border-radius: 30px; border: 1px solid var(--Primary-Colour, #3A0CA3); background: var(--White, #FFF); display: inline-flex; padding: 19px 30px; align-items: center; gap: 10px;"> 
+                View more properties
+            </button>
+        </div>
+
+    </div>
+    <div class="flex justify-center items-center px-16 py-20 mt-52 w-full bg-neutral-300 max-md:px-5 max-md:mt-10 max-md:max-w-full" >
+        <div class="flex flex-col items-center mt-5 mb-8 w-full max-w-[1120px] max-md:max-w-full">
+            <div class="text-xl font-medium text-center text-zinc-800 tracking-[2.91px]" > OUR SERVICES </div>
+            <div class="mt-9 text-4xl font-semibold leading-10 text-center text-neutral-950 max-md:max-w-full"> Donec porttitor euismod dignissim </div>
+            <div class="self-stretch mt-14 max-md:mt-10 max-md:max-w-full">
+            <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+                <div class="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
+                <div class="flex flex-col grow items-center px-16 py-14 w-full bg-white shadow-lg rounded-[30px] max-md:px-5 max-md:mt-10">
+                    <img srcset="https://i.postimg.cc/4NGggPLp/searsh.png" class="bg-blue-600 rounded-full aspect-square h-[90px] w-[90px]" />
+                    <div class="mt-8 text-xl font-medium text-zinc-800"> Buy a New Home </div>
+                    <div class="self-stretch mt-3.5 text-base leading-7 text-center text-zinc-500" >Donec porttitor euismod dignissim. Nullam a lacinia ipsum, necdignissim purus.</div>
+                </div>    
+            </div>
+            <div class="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
+                <div class="flex flex-col grow items-center px-16 py-14 w-full text-center bg-white shadow-lg rounded-[30px] max-md:px-5 max-md:mt-10">
+                    <img srcset="https://i.postimg.cc/YqxwqFZZ/home.png" class="bg-blue-600 rounded-full aspect-square h-[90px] w-[90px]" />
+                    <div class="mt-8 text-xl font-medium text-zinc-800"> Sell a House </div>
+                    <div class="self-stretch mt-5 text-base leading-7 text-zinc-500"> Donec porttitor euismod dignissim. Nullam a lacinia ipsum, nec dignissim purus.
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
+                <div class="flex flex-col grow items-center px-16 py-14 w-full text-center bg-white shadow-lg rounded-[30px] max-md:px-5 max-md:mt-10">
+                    <img  srcset="https://i.postimg.cc/GmhnB212/sleeep.png" class="bg-blue-600 rounded-full aspect-square h-[90px] w-[90px]" />
+                    <div class="mt-8 text-xl font-medium text-zinc-800"> Rent a House </div>
+                    <div class="self-stretch mt-5 text-base leading-7 text-zinc-500"> Donec porttitor euismod dignissim. Nullam a lacinia ipsum, nec dignissim purus. </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="flex flex-col self-center px-5 mt-16 w-full max-w-[1120px] max-md:mt-10 max-md:max-w-full ml-[290px] max-md:ml-3  ">
+        <div class="shrink-0 self-center rounded-full bg-[linear-gradient(180deg,#4361EE_0%,rgba(67,97,238,0.00)_100%)] h-[50px] w-[50px]" ></div>
+        <div class="mt-24 text-xl font-medium text-blue-600 tracking-[2.91px] max-md:mt-10 max-md:max-w-full"> AREAS ACROSS THE TOWN </div>
+        <div class="mt-7 text-4xl font-semibold leading-10 text-zinc-800 max-md:max-w-full" > Neighborhood Properties </div>
+        <div class="mt-16 max-md:mt-10 max-md:max-w-full">
+            <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+                <div class="flex flex-col w-[29%] max-md:ml-0 max-md:w-full">
+                    <div class="flex overflow-hidden relative flex-col grow items-start pt-20 pr-20 pb-6 pl-10 text-white  aspect-[0.94] max-md:px-5 max-md:mt-10">
+                        <img srcset="https://i.postimg.cc/4NfSPS22/Rectangle-17.png" class="object-cover absolute inset-0 size-full"/>
+                        <div class=" mt-20 text-6xl font-semibold mix-blend-hard-light leading-[64.41px] max-md:mt-10 max-md:text-4xl max-md:ml-12 max-md:mt-[200px]" style="opacity: 0.6; mix-blend-mode: hard-light;"> 216 </div>
+                        <div class="relative mt-5 text-xl font-medium max-md:ml-12 ">New York City, NY</div>
+                    </div>
+                </div>
+                <div class="flex flex-col ml-5 w-[29%] max-md:ml-0 max-md:w-full">
+                    <div class="flex overflow-hidden relative flex-col grow items-start pt-20 pr-20 pb-6 pl-10 text-white  aspect-[0.94] max-md:px-5 max-md:mt-10">
+                        <img srcset="https://i.postimg.cc/Wz2X9d8q/Rectangle-25.png" class="object-cover absolute inset-0 size-full"/>
+                        <div class=" mt-20 text-6xl font-semibold mix-blend-hard-light leading-[64.41px] max-md:mt-10 max-md:text-4xl max-md:ml-12 max-md:mt-[200px] " style="opacity: 0.6; mix-blend-mode: hard-light;" > 141 </div>
+                        <div class="relative mt-5 text-xl font-medium max-md:ml-12">Houston, TX</div>
+                    </div>
+                </div>
+                <div class="flex flex-col ml-5 w-[41%] max-md:ml-0 max-md:w-full">
+                    <div class="flex overflow-hidden relative flex-col grow items-start px-12 pt-20 pb-6 text-white  min-h-[320px] max-md:px-5 max-md:mt-10">
+                        <img srcset="https://i.postimg.cc/KzV8fTxJ/Rectangle-26.png" class="object-cover absolute inset-0 size-full"/>
+                        <div class=" mt-20 text-6xl font-semibold mix-blend-hard-light leading-[64.41px] max-md:mt-10 max-md:text-4xl max-md:ml-12 max-md:mt-[100px]" style="opacity: 0.6; mix-blend-mode: hard-light;" > 212 </div>
+                        <div class="relative mt-5 text-xl font-medium max-md:ml-12 ">San Diego, CA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-12 max-md:mt-10 max-md:max-w-full">
+            <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+            <div class="flex flex-col w-[39%] max-md:ml-0 max-md:w-full">
+                <div class="flex overflow-hidden relative flex-col grow items-start pt-20 pr-20 pb-6 pl-10 text-white  aspect-[1.29] max-md:px-5 max-md:mt-10">
+                    <img srcset="https://i.postimg.cc/wTzt3STv/Rectangle-27.png" class="object-cover absolute inset-0 size-full" />
+                    <div class=" mt-20 text-6xl font-semibold mix-blend-hard-light leading-[64.41px] max-md:mt-10 max-md:text-4xl  max-md:ml-12 max-md:mt-[100px]" style="opacity: 0.6; mix-blend-mode: hard-light;" > 183 </div>
+                    <div class="relative mt-5 text-xl font-medium max-md:ml-12">Philadelphia, PA</div>
+                </div>
+            </div>
+            <div class="flex flex-col ml-5 w-[61%] max-md:ml-0 max-md:w-full ">
+                <div class="flex overflow-hidden relative flex-col grow items-start pt-20 pr-20 pb-7 pl-10 text-white  min-h-[320px] max-md:px-5 max-md:mt-10 max-md:max-w-full " >
+                    <img srcset="https://i.postimg.cc/cChdvkXg/Rectangle-28.png" class="object-cover absolute inset-0 size-full" />
+                    <div class="mt-20 text-6xl font-semibold mix-blend-hard-light leading-[64.41px] max-md:mt-10 max-md:text-4xl" style="opacity: 0.6; mix-blend-mode: hard-light;"> 112 </div>
+                    <div class="relative mt-5 text-xl font-medium">San Francisco, CA</div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="shrink-0 self-end mt-16 mr-11 rounded-full bg-[linear-gradient(180deg,#4361EE_0%,rgba(67,97,238,0.00)_100%)] h-[100px] w-[100px] max-md:mt-10 max-md:mr-2.5"></div>
+        <div class="self-center mt-12 text-xl font-medium text-center text-blue-600 uppercase tracking-[2.91px] max-md:mt-10" > Introduce yourself to </div>
+        <div class="self-center mt-7 text-4xl font-semibold leading-10 text-center text-zinc-800"> Our Team of Experts </div>
+        <div class="self-center mt-24 w-full max-w-[1011px] max-md:mt-10 max-md:max-w-full">
+            <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+                <div class="flex flex-col w-3/12 max-md:ml-0 max-md:w-full">
+                    <div class="flex flex-col items-center text-center max-md:mt-10">
+                        <img srcset="https://i.postimg.cc/s2rHLfVz/Rectangle-29.png" class="aspect-[0.71] w-[200px]"/>
+                        <div class="mt-7 text-3xl font-semibold text-neutral-950"> Brendon M </div>
+                        <div class="mt-7 text-base font-medium text-blue-600"> CEO & Founder </div>
+                    </div>
+                </div>
+            <div class="flex flex-col ml-5 w-3/12 max-md:ml-0 max-md:w-full">
+                <div class="flex flex-col grow items-center text-center max-md:mt-10">
+                    <img srcset="https://i.postimg.cc/hG1ZRFjd/Rectangle-30.png" class="aspect-[0.76] w-[212px]"/>
+                    <div class="self-stretch mt-7 text-3xl font-semibold text-neutral-950"> Jodi J. Appleby </div>
+                    <div class="mt-6 text-base font-medium text-blue-600"> Real Estate Developer </div>
+                </div>
+            </div>
+            <div class="flex flex-col ml-5 w-3/12 max-md:ml-0 max-md:w-full">
+                <div class="flex flex-col grow items-center text-center max-md:mt-10">
+                    <img srcset="https://i.postimg.cc/kGBTSByQ/Rectangle-31.png" class="aspect-[0.71] w-[200px]" />
+                    <div class="self-stretch mt-7 text-3xl font-semibold text-neutral-950"> Justin S. Meza </div>
+                    <div class="mt-7 text-base font-medium text-blue-600"> Listing Agent </div>
+                </div>
+            </div>
+            <div class="flex flex-col ml-5 w-3/12 max-md:ml-0 max-md:w-full">
+                <div class="flex flex-col grow items-center text-center max-md:mt-10">
+                    <img srcset="https://i.postimg.cc/PJ92QT6B/Rectangle-32.png" class="aspect-[0.72] w-[202px]"/>
+                    <div class="self-stretch mt-7 text-3xl font-semibold text-neutral-950"> Susan T. Smith </div>
+                    <div class="mt-7 text-base font-medium text-blue-600"> Buyer's Agent</div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-center items-center px-16 py-20 mt-44 w-full bg-violet-900 max-md:px-5 max-md:mt-10 max-md:max-w-full">
+        <div class="mt-8 mb-14 w-full max-w-[1120px] max-md:mb-10 max-md:max-w-full">
+            <div class="self-center text-xl font-medium text-center text-white uppercase tracking-[2.91px]"> WHAT’S TRENDING </div>
+            <div class="mt-7 text-4xl font-semibold leading-10 text-center text-white"> Latest Blogs & Posts </div>
+            <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+            <div class="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
+                <div class="flex flex-col px-7 mt-16 grow mt-40 max-md:mt-10">
+                    <div class="flex overflow-hidden relative flex-col items-start px-12 pb-20 w-full text-center whitespace-nowrap  aspect-[1.42] max-md:px-5">
+                        <img srcset="https://i.postimg.cc/Z5FX4vsn/Rectangle-35.png" class="object-cover absolute inset-0 size-full" />
+                        <div class="flex relative flex-col p-2.5 mb-20 mt-2 bg-white rounded-none shadow-sm  max-md:ml-12 max-md:mt-3 " style="border-radius: 0px 0px 10px 10px;">
+                            <div class="text-xl font-medium text-zinc-800">28</div>
+                            <div class="mt-1.5 text-base leading-7 text-zinc-500">Tue</div>
+                        </div>
+                </div>
+                <div class="mt-7 text-3xl font-medium text-white"> Top 10 Home Buying Mistakes to Avoid </div>
+                <div class="mt-5 text-base leading-7 text-neutral-300"> Etiam eget elementum elit. Aenean dignissim dapibus vestibulum </div>
+                <div class="mt-14 ml-[200px] max-md:hidden"> 
+                    <button>
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c6033dce0249dca724a3a71610e423668fb19b030d4e702ccb7e1cae0360ffdc?" class="shrink-0 aspect-square w-[50px]" />
+                    </button>
+                </div>                
+            </div>
+            </div>
+            <div class="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
+                <div class="flex flex-col grow max-md:mt-5">
+                <div class="flex flex-col px-7 mt-16 mt-40 max-md:px-5 max-md:mt-10">
+                    <div class="flex overflow-hidden relative flex-col items-start px-12 pb-20 text-center  w-full text-center whitespace-nowrap  aspect-[1.42] max-md:px-5">
+                        <img srcset="https://i.postimg.cc/c1gj6bkV/Rectangle-36.png" class="object-cover absolute inset-0 size-full" />
+                        <div class="flex relative flex-col p-2.5 mb-20 mt-2 bg-white rounded-none shadow-sm max-md:mb-10 max-md:ml-12 max-md:mt-3" style="border-radius: 0px 0px 10px 10px;">
+                            <div class="text-xl font-medium text-zinc-800">08</div>
+                            <div class="mt-1.5 text-base leading-7 text-zinc-500">Mon</div>
+                        </div>
+                    </div>
+                    <div class="mt-8 text-3xl font-medium text-white">  How to Stage Your Home for a Quick Sale </div>
+                    <div class="mt-4 text-base leading-7 text-neutral-300"> Nullam odio lacus, dictum quis pretium congue, vehicula venenatis nunc. </div>
+                    <div class="mt-6 ml-[200px] max-md:hidden">                
+                        <button>
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c6033dce0249dca724a3a71610e423668fb19b030d4e702ccb7e1cae0360ffdc?" class="shrink-0 aspect-square w-[50px]" />
+                        </button> 
+                    </div>
+               
+                </div>
+                </div>
+            </div>
+            <div class="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
+                <div class="flex flex-col px-7 mt-[160px] max-md:px-5 max-md:mt-10">
+                <div class="flex overflow-hidden relative flex-col items-start px-12 pb-20 w-full text-center whitespace-nowrap  aspect-[1.42] max-md:px-5" >
+                    <img srcset="https://i.postimg.cc/bv4x530t/Rectangle-37.png" class="object-cover absolute inset-0 size-full" />
+                    <div class="flex relative flex-col p-2.5 mb-20 mt-2 bg-white rounded-none shadow-sm max-md:ml-12 max-md:mt-3" style="border-radius: 0px 0px 10px 10px;">
+                        <div class="text-xl font-medium text-zinc-800">08</div>
+                        <div class="mt-1.5 text-base leading-7 text-zinc-500">Wed</div>
+                    </div>
+                </div>
+                <div class="mt-7 text-3xl font-medium text-white"> 5 Tips for First-Time Home Sellers </div>
+                <div class="mt-5 text-base leading-7 text-neutral-300"> In hac habitasse platea dictumst. Phasellus vel velit vel augue maximus.
+                </div>
+                <div class="mt-16 ml-[200px] max-md:hidden"> 
+                    <button>
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c6033dce0249dca724a3a71610e423668fb19b030d4e702ccb7e1cae0360ffdc?" class="shrink-0 aspect-square w-[50px]" />
+                    </button>
+                </div>
+                
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-col self-center mt-56 w-full max-w-[1200px] max-md:mt-10 max-md:max-w-full max-md:ml-1 ml-[270px]">
+    <div class="self-center w-full max-w-[1090px] max-md:max-w-full">
+        <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+        <div class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+            <div class="flex flex-col px-5 max-md:mt-10">
+            <div class="text-xl font-medium text-blue-600 tracking-[2.91px]"> TESTIMONIALS </div>
+            <div class="mt-7 text-4xl font-semibold leading-10 text-zinc-800"> Look What Our Customers Say! </div>
+            <div class="mt-5 text-base leading-7 text-zinc-800"> Fusce venenatis tellus a felis scelerisque, non pulvinar est pellentesque. </div>
+            <div class="flex gap-5 justify-between mt-14 max-w-full w-[150px] max-md:mt-10">
+                <button>
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7c4a78661a417788e09706ca8e4d411ca81068f1997f4ccbf5f9f0b8b81de518?" class="shrink-0 aspect-square w-[50px]" />
+                </button>
+                <button>
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c6033dce0249dca724a3a71610e423668fb19b030d4e702ccb7e1cae0360ffdc?" class="shrink-0 aspect-square w-[50px]" />
+                </button>
+
+            </div>
+            </div>
+        </div>
+        <div class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+            <div class="flex flex-col grow px-12 py-8 w-full text-xl font-medium bg-white shadow-lg rounded-[30px] text-zinc-800 max-md:px-5 max-md:mt-10 max-md:max-w-full">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/80f468f9db308c9b0ffd156c9cb486486d2f8242b9a6d6183b59aa64787d47af?" class="ml-2.5 aspect-[1.61] fill-yellow-400 fill-opacity-40 w-[60px]"/>
+            <div class="mx-2.5 mt-5"> I highly recommend Jodi J. Appleby. She was attentive to our needs and worked tirelessly to find us the perfect home. We couldn't be happier with our new place! </div>
+            <div class="shrink-0 mt-9 h-px border border-solid bg-neutral-300 border-neutral-300"></div>
+            <div class="flex gap-5 justify-between mt-5 w-full">
+                <div class="flex gap-4">
+                <img srcset="https://i.postimg.cc/V6G8106n/Ellipse-15.png" class="shrink-0 rounded-full aspect-square w-[50px]" />
+                <div class="flex-auto my-auto">Barbara D. Smith</div>
+                </div>
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/65809bb186ce38ac78b00e0a5dc7956facb029419c68aacd58e1619316e4a30e?" class="shrink-0 my-auto aspect-[6.67] w-[86px]"/>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="pr-11 pl-5 mt-64 bg-violet-900 rounded-[40px] max-md:pr-5 max-md:mt-10 max-md:max-w-full max-md:pb-16 max-md:mr-11 max-md:ml-12" >
+        <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+        <div class="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
+            <div class="flex grow gap-0 mt-0 max-md:mt-0">
+                <img srcset="https://i.postimg.cc/7Z3rhWhx/unsplash-7uo-Mmz-Pd2-JA.png" class="grow shrink-0 aspect-[1.18] basis-0 w-fit "/>
+                <div class="shrink-0 self-start mt-40 rounded-full bg-[linear-gradient(180deg,#FFF_0%,rgba(255,255,255,0.00)_100%)] mt-24 h-[100px] w-[100px]   max-md:absolute max-md:mt-[130px] "></div>
+            </div>
+        </div>
+        <div class="flex flex-col ml-5 w-[67%] max-md:ml-0 max-md:w-full">
+            <div class="mt-0 max-md:-mt-2 max-md:max-w-full">
+            <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+                <div class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+                <div class="flex flex-col grow mt-32 text-white max-md:mt-10">
+                    <div class="text-4xl font-semibold leading-10"> Become a Agent. </div>
+                    <div class="mt-5 text-base leading-7"> Fusce venenatis tellus a felis scelerisque.
+                    <span class="text-white">
+                        venenatis tellus a felis scelerisque.
+                    </span>
+                    </div>
+                </div>
+                </div>
+                <div class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+                <div class="flex flex-col text-base font-medium text-center text-violet-900 max-md:mt-10" >
+                    <div class="shrink-0 self-end rounded-full bg-[linear-gradient(180deg,#FFF_0%,rgba(255,255,255,0.00)_100%)] h-[100px] w-[100px] max-md:hidden "></div>
+                    <button class="justify-center px-8 py-5 mt-12 bg-white border border-violet-900 border-solid rounded-[30px] max-md:px-5 max-md:mt-10"> Register Now </button>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    <div class="flex justify-center items-center px-16 py-20 mt-44 w-full max-md:px-5 max-md:mt-10 max-md:max-w-full" style="background: var(--Colour-1, #c3ceff);">
+    <div class="flex gap-5 justify-between items-start mb-5 w-full max-w-[1120px] max-md:flex-wrap max-md:max-w-full">
+        <div class="flex flex-col text-base font-medium text-zinc-800">
+        <div class="flex gap-2 text-xl font-semibold whitespace-nowrap">
+            <img srcset="https://i.postimg.cc/T39WVDx8/Untitled-1.png" class="shrink-0 bg-violet-900 rounded-full aspect-square h-[50px] w-[50px]"/>
+            <div class="flex-auto my-auto">Rezilla</div>
+        </div>
+        <div class="mt-8">
+            2728 Hickory StreetSalt
+            <br />
+            Lake City, UT 84104
+        </div>
+        <div class="flex gap-2 mt-11 max-md:mt-10">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/278017ac73adb8a012bae35035c1f1045f60778619fdbc789915376e6dad958d?" class="shrink-0 w-5 aspect-square"/>
+            <div class="flex-auto my-auto">+1 206-214-2298</div>
+        </div>
+        <div class="flex gap-2.5 mt-8 whitespace-nowrap">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7eaba8b173bc4d7f99e71c74ca2d22e196e387934ea17f3582def0878571a03e?" class="shrink-0 self-start w-5 aspect-[1.43]"/>
+            <div class="flex-auto">support@rezilla.com</div>
+        </div>
+        </div>
+        <div class="flex flex-col mt-4">
+        <div class="text-xl font-medium text-neutral-950">Quick Links</div>
+        <a href="" class="mt-10 text-base leading-7 text-zinc-800">
+            Home
+            <br />
+            About
+            <br />
+            Listings
+            <br />
+            Services
+            <br />
+            Blogs
+            <br />
+            Become a Agent
+        </a>
+        </div>
+        <div class="flex flex-col self-stretch my-auto">
+        <div class="text-xl font-medium text-neutral-950">Discovery</div>
+        <a href="" class="mt-9 text-base leading-7 text-zinc-800">
+            Canada
+            <br />
+            United States
+            <br />
+            Germany
+            <br />
+            Africa
+            <br />
+            India
+        </a>
+        </div>
+        <div class="flex flex-col mt-4 text-xl font-medium text-neutral-950">
+        <div>Subscribe to our Newsletter!</div>
+        <div class="flex gap-5 py-1.5 pr-1.5 pl-5 mt-5 text-base leading-7 bg-white shadow-lg rounded-[30px] text-neutral-400" >
+            <div class="flex-auto my-auto">Email Address</div>
+            <button>
+                <img src="https://i.postimg.cc/DzN9MkYP/fleche.png" class="shrink-0 aspect-square w-[50px]" />
+            </button>
+        </div>
+        <div class="mt-8">Follow Us on</div>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e7cd397d776f92ed3583d148f8cbf83a29669e95c1dd4c8a8fc971e24d09561a?" class="mt-8 w-24 aspect-[4.35]"/>
+        </div>
+    </div>
+    </div>
+    <div class="flex justify-center items-center px-16 py-4 w-full text-base leading-7 bg-neutral-950 text-neutral-400 max-md:px-5 max-md:max-w-full">
+    <div class="flex gap-5 w-full max-w-[1120px] max-md:flex-wrap max-md:max-w-full">
+        <div class="flex-auto">© Rezilla – All rights reserved</div>
+        <div class="flex gap-5 justify-between self-start text-right max-md:flex-wrap">
+        <div>Terms and Conditions</div>
+        <div>Privacy Policy</div>
+        <div>Disclaimer</div>
+        </div>
+    </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
